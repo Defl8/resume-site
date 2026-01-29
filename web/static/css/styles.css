@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 20vh;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Ripple effect */
+.ripple {
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple-animation 1.5s ease-out;
+    z-index: 0;
+}
+
+@keyframes ripple-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(40);
+        opacity: 0;
+    }
+}
+
+/* Optional: Add some variation with different colors */
+.ripple.blue {
+    background: rgba(100, 200, 255, 0.5);
+}
+
+.ripple.purple {
+    background: rgba(200, 100, 255, 0.5);
+}
+
+.ripple.green {
+    background: rgba(100, 255, 200, 0.5);
+}
